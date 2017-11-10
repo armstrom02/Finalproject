@@ -19,6 +19,7 @@ import { HttpModule } from '@angular/http';
 import { ProductcartComponent } from './productcart/productcart.component';
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
+import { MovieslistComponent } from './movieslist/movieslist.component';
 
 let config = new AuthServiceConfig([
   {
@@ -47,7 +48,8 @@ export function provideConfig() {
     ProductdetailComponent,
     ProfileComponent,
     NavigationComponent,
-    ProductcartComponent
+    ProductcartComponent,
+    MovieslistComponent
   ],
   imports: [
     SocialLoginModule,

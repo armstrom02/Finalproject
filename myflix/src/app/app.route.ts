@@ -1,5 +1,5 @@
 import { RouterModule,Routes} from '@angular/router';
-import { HeaderComponent } from './header/header.component';
+import { MovieslistComponent } from './movieslist/movieslist.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
@@ -22,6 +22,7 @@ export const appRoutes: Routes = [
      { path: '',redirectTo: 'Home', pathMatch: 'full' },
      { path: 'nav/:user', component: NavigationComponent },
      { path: 'productcart', component: ProductcartComponent },
+     { path: 'movieslist', component: MovieslistComponent }
      
   ];
 

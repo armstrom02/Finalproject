@@ -19,7 +19,8 @@
 
       <ng-template [ngIf]="!logout.onCheck()">
         <ul class="nav navbar-nav">
-          <li><a [routerLink]="['productlist']">Product List</a></li>
+          <li><a [routerLink]="['productlist']">Tv Shows</a></li>
+          <li><a [routerLink]="['movieslist']">Movies</a></li>
           <li><a [routerLink]="['profile']"><span class="glyphicon glyphicon-user" ></span>  Welcome {{logout.checkuser()}}</a></li>
         </ul>
       </ng-template>
