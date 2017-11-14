@@ -1,0 +1,258 @@
+<div id="body">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="cont">
+        <div class="row">
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{this.userdata.length}}</div>
+                                <div>Users</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a (click)="usr()">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{this.moviesdata.length}}</div>
+                                <div>Movies</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a (click)="movies()">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{this.tvseriesdata.length}}</div>
+                                <div>Tv Series</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a (click)="tvseries()" s>
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">2</div>
+                                <div>Content</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a (click)="tvseries()">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <div *ngIf="this.usertable">
+        <table>
+            <br>
+            <tr>
+                <th>User Information</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>DOB</th>
+                <th>Admin</th>
+            </tr>
+            <tr *ngFor="let user of userdata">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.mobile}}</td>
+                <td>{{user.dob}}</td>
+                <td>{{user.admin}}</td>
+            </tr>
+        </table>
+        <br>
+        <br>
+
+        <div id="form">
+
+            <form class="form-inline">
+                <fieldset>
+                    <legend>Edit User</legend>
+                    <div class="form-group">
+                        <label for="user" style="margin:0px 10px;float:left;">Name:</label>
+                        <select style="margin:0px 10px;float:left;" class="form-control" name="user" id="update_user">
+                            <option *ngFor="let user of userdata">{{user.name}}</option>
+                    </select>
+                    </div>
+                    <label for="admin">Admin</label>
+                    <select style="margin:0px 10px;" class="form-control" name="admin" id="update_admin">
+                    <option >True</option>
+                    <option >False</option>
+                </select>
+                    <button type="submit" class="btn btn-default" align="center" (click)="delete()" style="width:200px;margin:0px 10px;float:right;">Delete</button>
+                    <button type="submit" class="btn btn-default" align="center" (click)="update()" style="width:200px;margin:0px 10px;float:right;">Update</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="this.moviestable">
+        <table >
+            <br>
+            <tr>
+                <th>Movies</th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Descreption</th>
+                <th>length</th>
+            </tr>
+            <tr *ngFor="let movies of moviesdata">
+                <td>{{movies.name}}</td>
+                <td>{{movies.category}}</td>
+                <td>{{movies.description}}</td>
+                <td>{{movies.length}}</td>
+            </tr>
+
+
+        </table>
+        <br>
+        <br>
+
+        <div id="form">
+
+            <form class="form-inline">
+                <fieldset>
+                    <legend>Add Movies</legend>
+                    <div class="form-group">
+                        
+                            
+                            <input list="movies" name="movies" class="form-control" placeholder="Name" id="mname">
+                            <datalist id="movies">
+                              <option *ngFor="let movies of moviesdata">{{movies.name}}</option>
+                            </datalist>                       
+                            <select class="form-control" id="mcategory" >
+                                    <option>Action</option>
+                                    <option>Thiller</option>
+                                    <option>Drama</option>
+                                    <option>Love</option>
+                                    <option>Horror</option>
+                            </select>                           
+                            <input type="text" class="form-control" id="mdescription" placeholder="Description">                        
+                            <input type="number" min="10" max="240" class="form-control" id="mlength" placeholder="Length">
+                            <input type="text" class="form-control" id="murl" placeholder="Url">
+                            
+                        </div>
+                    <button type="submit" class="btn btn-default" align="center" (click)="create_movies()" style="width:200px;margin:0px 10px;float:right;">Add</button>
+                </fieldset>
+            </form>
+<br>
+            <form class="form-inline">
+                    <fieldset>
+                        <legend>Delete Movie</legend>
+                        <div class="form-group">
+                            
+                                
+                                <input list="movies" name="movies" id="dmname" class="form-control" placeholder="Name">
+                                <datalist id="movies">
+                                  <option *ngFor="let movies of moviesdata">{{movies.name}}</option>
+                                </datalist>                       
+                                  
+                            </div>
+                        <button type="submit" class="btn btn-default" align="center" (click)="delete_movies()" style="width:200px;margin:0px 10px;float:right;">Delete</button>
+                    </fieldset>
+                </form>
+        </div>
+    </div>
+
+
+
+    
+    <table *ngIf="this.tvseriestable">
+        <br>
+        <tr>
+            <th>Tv Series</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Series</th>
+            <th>Season</th>
+            <th>Episode</th>
+            <th>Descreption</th>
+            <th>Category</th>
+            <th>length</th>
+        </tr>
+        <tr *ngFor="let tvseries of tvseriesdata">
+            <td>{{tvseries.name}}</td>
+            <td>{{tvseries.series}}</td>
+            <td>{{tvseries.season}}</td>
+            <td>{{tvseries.episode}}</td>
+            <td>{{tvseries.description}}</td>
+            <td>{{tvseries.category}}</td>
+            <td>{{tvseries.length}}</td>
+        </tr>
+
+
+    </table>
+
+</div>

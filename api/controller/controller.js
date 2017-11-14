@@ -25,12 +25,58 @@ exports.get_tvseries_category= function(req, res) {
   });
  }; 
 
+ exports.get_tvseries_series= function(req, res) {
+  var series=req.params.series;
+  tvseriesdb.find({series:series}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json(task);
+  });
+ }; 
+
+ exports.get_tvseries_series_season= function(req, res) {
+  var series=req.params.series;
+  var season=req.params.season;
+  tvseriesdb.find({ $and :[{series:series}, {season:season}]}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json(task);
+  });
+ }; 
+
 exports.create_tvseries = function(req, res) {
   var new_task = new tvseriesdb(req.body);
   new_task.save(function(err, task) {
     if (err)
       res.send(err);
     res.json(task);
+  });
+};
+
+
+exports.delete_tvseries_series = function(req, res) {
+  tvseriesdb.remove({
+    series: req.params.series
+  }, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json({ message: 'Task successfully deleted' });
+  });
+};
+
+exports.delete_tvseries_season = function(req, res) {
+  tvseriesdb.remove({ $and :[{series:req.params.series}, {season:req.params.season}]}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json({ message: 'Task successfully deleted' });
+  });
+};
+
+exports.delete_tvseries_episode = function(req, res) {
+  tvseriesdb.remove({ $and :[{series:req.params.series},{season:req.params.season},{episode:req.params.episode}]}, function(err, task) {
+    if (err)
+      res.send(err);
+    res.json({ message: 'Task successfully deleted' });
   });
 };
 
@@ -44,7 +90,6 @@ exports.delete_tvseries = function(req, res) {
     res.json({ message: 'Task successfully deleted' });
   });
 };
-
 
 
 
@@ -120,7 +165,7 @@ exports.get_user = function(req, res) {
 
 
 exports.update_user = function(req, res) {
-  Task.findOneAndUpdate({_id: req.params.userId}, req.body, {new: true}, function(err, task) {
+  Task.findOneAndUpdate({name: req.params.name}, req.body, {new: true}, function(err, task) {
     if (err)
       res.send(err);
     res.json(task);
@@ -129,10 +174,8 @@ exports.update_user = function(req, res) {
 
 
 exports.delete_user = function(req, res) {
-
-
   Task.remove({
-    _id: req.params.userId
+    name: req.params.name
   }, function(err, task) {
     if (err)
       res.send(err);

@@ -8,7 +8,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { ProductcartComponent } from './productcart/productcart.component';
+import { AdminComponent } from './admin/admin.component';
 export const appRoutes: Routes = [
     
      { path: '', component: HomeComponent },
@@ -21,8 +21,8 @@ export const appRoutes: Routes = [
      { path: 'productdetail/:name/:imageurl/:price', component: ProductdetailComponent },   
      { path: '',redirectTo: 'Home', pathMatch: 'full' },
      { path: 'nav/:user', component: NavigationComponent },
-     { path: 'productcart', component: ProductcartComponent },
-     { path: 'movieslist', component: MovieslistComponent }
+     { path: 'movieslist', component: MovieslistComponent },
+     { path: 'admin', component: AdminComponent }
      
   ];
 

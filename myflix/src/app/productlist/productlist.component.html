@@ -7,19 +7,19 @@
         <div class="row">
           <br>
 
-              <h2 align="center">Product List</h2>
+              <h2 align="center">Tv Series</h2>
                    <br>
-              <div class="col-sm-3" *ngFor= "let product of products" (click)="detailfn(product)">
+              <div class="col-sm-3" *ngFor= "let tvseries of tvseriesdata" (click)="detailfn(tveries)">
                 <article class="col-item">
                   <div class="photo">
-                    <img src="{{product.purl}}" class="img-responsive" alt="Product Image"  />
+                    <img src="http://icons.veryicon.com/ico/System/Smoothicons%205/Movies.ico" class="img-responsive" alt="Product Image"  />
                   </div>
                   <div class="info">
                     <div class="row">
                       <div class="price-details col-md-6"  >
                         
-                        <h1 >{{product.pname}}</h1>
-                        <span class="price-new">${{product.pprice}}</span>
+                        <h1 >{{tvseries.name}}</h1>
+                        <span class="price-new">${{tvseries.length}}</span>
                       </div>
                     </div>
                     

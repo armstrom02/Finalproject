@@ -16,10 +16,10 @@ import { appRoutes } from './app.route';
 import { AppService} from './app.service';
 import { DbconnectService} from './dbconnect.service';
 import { HttpModule } from '@angular/http';
-import { ProductcartComponent } from './productcart/productcart.component';
 import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
 import { MovieslistComponent } from './movieslist/movieslist.component';
+import { AdminComponent } from './admin/admin.component';
 
 let config = new AuthServiceConfig([
   {
@@ -48,8 +48,8 @@ export function provideConfig() {
     ProductdetailComponent,
     ProfileComponent,
     NavigationComponent,
-    ProductcartComponent,
-    MovieslistComponent
+    MovieslistComponent,
+    AdminComponent
   ],
   imports: [
     SocialLoginModule,

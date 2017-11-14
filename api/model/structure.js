@@ -6,12 +6,12 @@ var Schema = mongoose.Schema;
 
 var userprofile = new Schema({
 
-name: {type: String},
-email: {type: String,},
+name: {type: String, required: true , unique: true},
+email: {type: String,required: true},
 mobile: {type: Number,},
-admin: {type: Boolean},
-dob: {type: Date,},
-password: {type: String,},
+admin: {type: Boolean,default: "false"},
+dob: {type: Date,required: true},
+password: {type: String,required: true},
 created_date: {type: Date,default: Date.now},
 });
 
@@ -19,13 +19,14 @@ created_date: {type: Date,default: Date.now},
 
 var tvseries = new Schema({
 
-name: {type: String},
-category: {type: String},
-series: {type: String},
-episode: {type: Number},  
+name: {type: String,required: true,unique: true},
+category: {type: String,required: true},
+season: {type: Number,required: true},
+series: {type: String,required: true},
+episode: {type: Number,required: true},  
 description: {type: String},
-length: {type: Number},
-url: {type: String},
+length: {type: Number,required: true},
+url: {type: String,required: true},
 
 
 });
@@ -33,11 +34,11 @@ url: {type: String},
 
 var movies = new Schema({
 
-name: {type: String,},
-category: {type: String,},
+name: {type: String,unique: true,required: true},
+category: {type: String,required: true},
 description: {type: String,},
-length: {type: Number,},
-url: {type: String,}, 
+length: {type: Number,required: true},
+url: {type: String,required: true}, 
 
 });
 

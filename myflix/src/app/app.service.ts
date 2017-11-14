@@ -6,11 +6,16 @@ export class AppService {
   constructor() { }
   role=true;
   user="";
- onCheck(){
+  admin=false;
+onCheck(){
   return this.role;
 }
 
 checkuser(){
   return this.user;
+}
+
+checkadmin(){
+  return this.admin;
 }
 }

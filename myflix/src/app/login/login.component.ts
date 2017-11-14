@@ -46,6 +46,9 @@ signOut(): void {
   ngOnInit() {
     this.users=users;
     this.auth.get_all();
+    this.auth.get_all_movies();
+    this.auth.get_all_tvseries();
+
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
@@ -72,7 +75,10 @@ if(usr.length!=0&&pas.length!=0){
       this.router.navigate(['/productlist',usr]);
       this.service.role=false;
       this.service.user=usr;
-
+      if(this.userdata[i].admin==true){
+        this.service.admin=true;
+      }
+      else{this.service.admin=false};
       break;
       }
       else alert("Password Incorrect");
