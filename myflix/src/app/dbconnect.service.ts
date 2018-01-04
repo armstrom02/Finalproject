@@ -43,7 +43,7 @@ export class DbconnectService {
   }
 
   get_user(user, password) {
-    return this.http.get('http://localhost:3200/user/' + user).map((res: Response) => res.json()).subscribe(data => { this.userdb = data });
+    return this.http.get('http://localhost:3200/user/' + user+"/"+password).map((res: Response) => res.json());
   }
 
 
@@ -53,8 +53,7 @@ export class DbconnectService {
   }
 
   get_all_movies() {
-    this.http.get('http://localhost:3200/movies').map((res: Response) => res.json()).subscribe(data => { this.moviesdata = data });
-    console.log("getall");
+    return this.http.get('http://localhost:3200/movies').map((res: Response) => res.json());
   }
 
   create_movies(movie) {
@@ -73,8 +72,7 @@ export class DbconnectService {
   }
 
   get_all_tvseries() {
-    this.http.get('http://localhost:3200/tvseries').map((res: Response) => res.json()).subscribe(data => { this.tvseriesdata = data });
-    console.log("getall");
+   return this.http.get('http://localhost:3200/tvseries').map((res: Response) => res.json());
   }
   addcartdb(order) {
     let headers = new Headers({ 'Content-Type': 'application/json' });

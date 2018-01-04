@@ -1,3 +1,4 @@
+var profile = require('./routes/profile');
 var express = require('express'),
 app = express(),
 port = process.env.PORT || 3200,
@@ -16,6 +17,8 @@ mongoose.connect('mongodb://localhost/mydatabase');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cor());
+app.use('/profile', profile);
+
 
 
 var routes = require('./routes/routes');

@@ -196,6 +196,7 @@
                                     <option>Thiller</option>
                                     <option>Drama</option>
                                     <option>Love</option>
+                                    <option>Kids</option>
                                     <option>Horror</option>
                             </select>                           
                             <input type="text" class="form-control" id="mdescription" placeholder="Description">                        
@@ -203,7 +204,7 @@
                             <input type="text" class="form-control" id="murl" placeholder="Url">
                             
                         </div>
-                    <button type="submit" class="btn btn-default" align="center" (click)="create_movies()" style="width:200px;margin:0px 10px;float:right;">Add</button>
+                    <button type="reset" class="btn btn-default" align="center" (click)="create_movies()" style="width:200px;margin:0px 10px;float:right;">Add</button>
                 </fieldset>
             </form>
 <br>
@@ -213,10 +214,10 @@
                         <div class="form-group">
                             
                                 
-                                <input list="movies" name="movies" id="dmname" class="form-control" placeholder="Name">
-                                <datalist id="movies">
+                                <select name="movies" id="dmname" class="form-control" placeholder="Name">
+                             
                                   <option *ngFor="let movies of moviesdata">{{movies.name}}</option>
-                                </datalist>                       
+                                </select>                       
                                   
                             </div>
                         <button type="submit" class="btn btn-default" align="center" (click)="delete_movies()" style="width:200px;margin:0px 10px;float:right;">Delete</button>

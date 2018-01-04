@@ -189,9 +189,9 @@
     <div class="login">
         <h1>Login</h1>
         <form method="post">
-            <input type="text" name="u" placeholder="Username" id="Username" required="required" autofocus />
-            <input type="password" name="p" placeholder="password" id="password" required="required" />
-            <input type="submit" (click)="loginfun()" class="btn btn-primary btn-block btn-large" value="Let me in.">
+            <input type="text" name="u" placeholder="Username" #Username required="required" autofocus />
+            <input type="password" name="p" placeholder="password" #password required="required" />
+            <input type="submit" (click)="loginfun(Username.value,password.value)" class="btn btn-primary btn-block btn-large" value="Let me in.">
             <table>
             <tr><td><button class="loginBtn loginBtn--facebook" (click)="signInWithFB()">Login with Facebook</button></td></tr>
             <tr><td><button class="loginBtn loginBtn--google" (click)="signInWithGoogle()">Login with Google</button></td></tr>

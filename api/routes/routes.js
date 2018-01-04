@@ -8,10 +8,12 @@ module.exports = function(app) {
     .post(call.create_user);
 
   app.route('/user/:name')
-    .get(call.get_user)
     .put(call.update_user)
     .delete(call.delete_user);
 
+  app.route('/user/:name/:password')
+    .get(call.get_user);
+    
   
  app.route('/tvseries')
     .get(call.get_tvseries)

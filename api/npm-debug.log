@@ -10,8 +10,8 @@
 6 silly lifecycle bridge@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle bridge@1.0.0~start: bridge@1.0.0
 8 verbose lifecycle bridge@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle bridge@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;F:\project\Finalproject\api\node_modules\.bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\TC\BIN;C:\MinGW\bin;C:\MinGW\MSYS\1.0\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Windows\System32;;C:\Program Files\Microsoft VS Code\bin;C:\Users\arm\AppData\Roaming\npm
-10 verbose lifecycle bridge@1.0.0~start: CWD: F:\project\Finalproject\api
+9 verbose lifecycle bridge@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;F:\project\anglar\Finalproject\api\node_modules\.bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\TC\BIN;C:\MinGW\bin;C:\MinGW\MSYS\1.0\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Windows\System32;;C:\Program Files\Microsoft VS Code\bin;C:\Users\arm\AppData\Roaming\npm
+10 verbose lifecycle bridge@1.0.0~start: CWD: F:\project\anglar\Finalproject\api
 11 silly lifecycle bridge@1.0.0~start: Args: [ '/d /s /c', 'nodemon bridge.js' ]
 12 silly lifecycle bridge@1.0.0~start: Returned: code: 3221225786  signal: null
 13 info lifecycle bridge@1.0.0~start: Failed to exec start script
@@ -26,7 +26,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:920:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
 15 verbose pkgid bridge@1.0.0
-16 verbose cwd F:\project\Finalproject\api
+16 verbose cwd F:\project\anglar\Finalproject\api
 17 error Windows_NT 6.3.9600
 18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start"
 19 error node v6.11.4

@@ -18,7 +18,11 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.userdata = this.auth.usersdata;
-    this.moviesdata = this.auth.moviesdata;
+    this.auth.get_all_movies().subscribe(res=>{
+      this.moviesdata=res;
+    });    
+    
+
     this.tvseriesdata = this.auth.tvseriesdata;
   }
 
@@ -93,10 +97,12 @@ create_movies(): void {
   if(name.length!=0 && category.length!=0 && length.length!=0 && description.length!=0 && url.length!=0 ){
     var obj={name:name, category: category, description:description, length:length, url:url };
       this.auth.create_movies(obj).subscribe(res=> {
-        this.auth.get_all_movies();
-        this.moviesdata = this.auth.moviesdata;
+
+        this.auth.get_all_movies().subscribe(res=>{
+          this.moviesdata=res;
+        });
         alert("Movie Added Succesfully !!");
-        this.movies();
+        
     });
      
     }
@@ -107,10 +113,10 @@ create_movies(): void {
   delete_movies(): void{
     var movie : string =(<HTMLInputElement> document.getElementById("dmname")).value; 
     this.auth.delete_movies(movie).subscribe(res=> {
-      this.auth.get_all_movies();
-      this.moviesdata = this.auth.moviesdata;
+      this.auth.get_all_movies().subscribe(res=>{
+          this.moviesdata=res;
+        });
       alert("Movie Deleted !!");
-      this.movies();
   });
 
 

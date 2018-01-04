@@ -16,8 +16,7 @@ public tvseriesdata: any=[];
   constructor(private router: Router,private auth :DbconnectService) { }
 
   ngOnInit() {
-
-    this.tvseriesdata = this.auth.tvseriesdata;
+    this.auth.get_all_tvseries().subscribe(data => { this.tvseriesdata = data; });
     
   }
 
